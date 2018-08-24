@@ -22,7 +22,7 @@ class NoteListAdapter(private val context: Context) :
         return NoteViewHolder(view)
     }
 
-    override fun getItemCount(): Int = if (mNotes != null) (MutableList) mNotes.size else 0
+    override fun getItemCount(): Int = mNotes?.size ?: 0
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val listNotes = mNotes?.get(position)
